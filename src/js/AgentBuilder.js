@@ -76,9 +76,9 @@ let Agent = new AgentBuilder('CREATURE');
  */
 let Predator = new AgentBuilder('PREDATOR')
   .setRadius(10)
-  .setMaxSpeed(2)
-  .setMaxForce(0.05)
-  .setHealthDecrease(0.002)
+  .setMaxSpeed(4)//2
+  .setMaxForce(0.5)//0.05
+  .setHealthDecrease(0.2)//0.002
   .setColor([255, 0, 0])
   .setFoodMultiplier([0.5, -0.5]);
 
