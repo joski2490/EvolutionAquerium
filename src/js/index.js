@@ -17,7 +17,7 @@ const FOOD = 'FOOD';
 const POISON = 'POISON';
 
 function load() {
-  if (typeof window.orientation !== 'undefined') { MAX_CREATURES = 200 }
+  if (typeof window.orientation !== 'undefined') { MAX_CREATURES = 1000 }
 
   const ecoSys = new EcoSystem();
 
@@ -40,7 +40,7 @@ function load() {
   // which you configure in registerAgents
   ecoSys.initialPopulation({
     CREATURE: 150,
-    PREDATOR: randomInt(5, 10),
+    PREDATOR: randomInt(5, 25),
     AVOIDER: randomInt(10, 20),
     EATER: randomInt(1, 4),
   });
@@ -69,9 +69,9 @@ function load() {
     if (random(1) < 0.005) addPredators(ecoSys.groups.PREDATOR, 1);
     if (random(1) < 0.005) addAvoiders(ecoSys.groups.AVOIDER, 1);
 
-    if (ecoSys.groups.CREATURE.length < 20) addCreatures(ecoSys.groups.CREATURE, 10);
+    if (ecoSys.groups.CREATURE.length < 1) addCreatures(ecoSys.groups.CREATURE, 2);//10 10
     if (ecoSys.groups.EATER.length < 1) addEaters(ecoSys.groups.EATER, 1);
-    if (ecoSys.entities.FOOD.length < 50) addItem(ecoSys.entities.FOOD, 20);
+    if (ecoSys.entities.FOOD.length < 50) addItem(ecoSys.entities.FOOD, 500);
     if (ecoSys.groups.CREATURE.length > MAX_CREATURES) ecoSys.groups.CREATURE.pop()
   }
 
