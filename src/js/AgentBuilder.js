@@ -24,11 +24,11 @@ class AgentBuilder {
     this.radius = r;
     return this;
   }
-  setMaxSpeed(val = 1.5) {
+  setMaxSpeed(val = 5) {//1.5
     this.maxSpeed = val;
     return this;
   }
-  setMaxForce(val = 0.05) {
+  setMaxForce(val = 0.5) {//0.05
     this.maxForce = val;
     return this;
   }
