@@ -21,8 +21,8 @@ class BaseAgent extends Renderer {
     this.age = 1;
     this.health = 1;
     this.radius = radius || 5;
-    this.maxSpeed = builder.maxSpeed || 1.5;
-    this.maxForce = builder.maxForce || 0.05;
+    this.maxSpeed = builder.maxSpeed || 5;//1.5
+    this.maxForce = builder.maxForce || 0.5;//0.05
     this.healthDecrease = builder.healthDecrease || 0.003;
     this.goodFoodMultiplier = builder.goodFoodMultiplier || 0.5;
     this.badFoodMultiplier = builder.badFoodMultiplier || -0.4;
