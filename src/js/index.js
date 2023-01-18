@@ -4,8 +4,8 @@ let WIDTH = canvas.width = window.innerWidth;
 let HEIGHT = canvas.height = 600;
 let ctx = canvas.getContext('2d');
 
-let MAX_CREATURES = 1000;
-const REPRODUCTION_RATE = 0.5;
+let MAX_CREATURES = 350;
+const REPRODUCTION_RATE = 0.9;
 const ENABLE_SUPER_DEBUG = true;
 
 // constants for flexibility
@@ -17,7 +17,7 @@ const FOOD = 'FOOD';
 const POISON = 'POISON';
 
 function load() {
-  if (typeof window.orientation !== 'undefined') { MAX_CREATURES = 1000 }
+  if (typeof window.orientation !== 'undefined') { MAX_CREATURES = 350 }
 
   const ecoSys = new EcoSystem();
 
@@ -39,10 +39,10 @@ function load() {
   // initialPopulation have to use the same name
   // which you configure in registerAgents
   ecoSys.initialPopulation({
-    CREATURE: 150,
-    PREDATOR: randomInt(5, 25),
-    AVOIDER: randomInt(10, 20),
-    EATER: randomInt(1, 4),
+    CREATURE: 10,
+    PREDATOR: randomInt(1, 2),
+    AVOIDER: randomInt(1, 2),
+    EATER: randomInt(1, 2),
   });
 
   let debugAgent = null;
@@ -63,7 +63,7 @@ function load() {
 
   function populationConstraints() {
     // Add And Reset
-    if (random(1) < 0.03) addItem(ecoSys.entities.FOOD, 8);
+    if (random(1) < 0.3) addItem(ecoSys.entities.FOOD, 30);//0.03 8
     if (random(1) < 0.03) addItem(ecoSys.entities.POISON, 1);
 
     if (random(1) < 0.005) addPredators(ecoSys.groups.PREDATOR, 1);
@@ -71,7 +71,7 @@ function load() {
 
     if (ecoSys.groups.CREATURE.length < 1) addCreatures(ecoSys.groups.CREATURE, 2);//10 10
     if (ecoSys.groups.EATER.length < 1) addEaters(ecoSys.groups.EATER, 1);
-    if (ecoSys.entities.FOOD.length < 50) addItem(ecoSys.entities.FOOD, 500);
+    if (ecoSys.entities.FOOD.length < 100) addItem(ecoSys.entities.FOOD, 200);
     if (ecoSys.groups.CREATURE.length > MAX_CREATURES) ecoSys.groups.CREATURE.pop()
   }
 
