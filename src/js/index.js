@@ -4,7 +4,7 @@ let WIDTH = canvas.width = window.innerWidth;
 let HEIGHT = canvas.height = 600;
 let ctx = canvas.getContext('2d');
 
-let MAX_CREATURES = 350;
+let MAX_CREATURES = 150;
 const REPRODUCTION_RATE = 0.9;
 const ENABLE_SUPER_DEBUG = true;
 
