@@ -76,7 +76,7 @@ let Agent = new AgentBuilder('CREATURE');
  */
 let Predator = new AgentBuilder('PREDATOR')
   .setRadius(10)
-  .setMaxSpeed(46)//2
+  .setMaxSpeed(6)//2
   .setMaxForce(0.7)//0.05
   .setHealthDecrease(0.002)//0.002
   .setColor([255, 0, 0])
