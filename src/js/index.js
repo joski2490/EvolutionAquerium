@@ -40,9 +40,9 @@ function load() {
   // which you configure in registerAgents
   ecoSys.initialPopulation({
     CREATURE: 10,
-    PREDATOR: randomInt(1, 2),
+    PREDATOR: randomInt(10, 20),
     AVOIDER: randomInt(1, 2),
-    EATER: randomInt(1, 2),
+    EATER: randomInt(10, 20),
   });
 
   let debugAgent = null;
